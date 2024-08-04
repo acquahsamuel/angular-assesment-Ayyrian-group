@@ -1,0 +1,127 @@
+<section>
+    <h3>  Angular Assesment -Json placeholder API (user endpoint) </h3>
+</section>
+
+<div class="card">
+    <p-table
+      #dt2
+      [value]="users"
+      dataKey="id"
+      [rows]="10"
+      [rowsPerPageOptions]="[10, 25, 50]"
+      [loading]="isLoading"
+      [paginator]="true"
+      [globalFilterFields]="['name', 'username', 'website', 'phone', 'email']"
+      [tableStyle]="{ 'min-width': '75rem' }"
+    >
+      <ng-template pTemplate="caption">
+        <div class="flex">
+          <p-iconField iconPosition="left" class="ml-auto">
+            <p-inputIcon>
+              <i class="pi pi-search"></i>
+            </p-inputIcon>
+            <input
+              pInputText
+              type="text"
+              (input)="dt2.filterGlobal($event.target.value, 'contains')"
+              placeholder="Search keyword"
+            />
+          </p-iconField>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="name" style="width: 20%">
+            Name <p-sortIcon field="name" />
+          </th>
+          <th pSortableColumn="name" style="width: 20%">
+            Username <p-sortIcon field="username" />
+          </th>
+          <th pSortableColumn="website" style="width: 20%">
+            Website <p-sortIcon field="website" />
+          </th>
+          <th pSortableColumn="email" style="width: 20%">
+            Email <p-sortIcon field="email" />
+          </th>
+  
+          <th pSortableColumn="phone" style="width: 20%">
+            Phone <p-sortIcon field="phone" />
+          </th>
+        </tr>
+  
+        <tr>
+          <th>
+            <p-columnFilter
+              type="text"
+              field="name"
+              placeholder="Search by name"
+              ariaLabel="Filter Name"
+            />
+          </th>
+          <th>
+            <p-columnFilter
+              type="text"
+              field="username"
+              placeholder="Search by country"
+              ariaLabel="Filter Country"
+            />
+          </th>
+          <th>
+            <p-columnFilter
+              type="text"
+              field="website"
+              placeholder="Search for Website"
+              ariaLabel="Filter Website"
+            />
+          </th>
+  
+          <th>
+            <p-columnFilter
+              type="text"
+              field="email"
+              placeholder="Search by Email"
+              ariaLabel="Filter Email"
+            />
+          </th>
+  
+          <th>
+            <p-columnFilter
+              type="text"
+              field="phone"
+              placeholder="Search by Phone"
+              ariaLabel="Filter Phone"
+            />
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
+        <tr>
+          <td>
+            {{ user.name }}
+          </td>
+  
+          <td>
+            {{ user.username }}
+          </td>
+  
+          <td>
+            <span> {{ user.website }}</span>
+          </td>
+  
+          <td>
+            <span> {{ user.email }}</span>
+          </td>
+  
+          <td>
+            <span class="pi"> {{ user.phone }}</span>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="5">No customers found.</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  

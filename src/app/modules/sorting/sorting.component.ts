@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { IUser } from 'src/app/shared/types/model';
- 
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
@@ -13,34 +12,35 @@ import {} from '@angular/common/http';
 import { InputTextModule } from 'primeng/inputtext';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
-import { ngPrimeModule } from 'src/app/ng-prime.module';
  
+
 @Component({
   selector: 'app-sorting',
-  imports : [ ngPrimeModule],
-  // imports: [TableModule, TagModule, IconFieldModule, InputTextModule, InputIconModule, MultiSelectModule, DropdownModule, HttpClientModule, CommonModule],
+  imports: [
+    TableModule,
+    TagModule,
+    IconFieldModule,
+    InputTextModule,
+    InputIconModule,
+    MultiSelectModule,
+    DropdownModule,
+    CommonModule,
+  ],
   templateUrl: './sorting.component.html',
   styleUrls: ['./sorting.component.scss'],
   standalone: true,
 })
 export class SortingComponent implements OnInit {
-  
+  isLoading: Boolean = false;
+  users : IUser[] = [];
 
-  constructor(
-    private apiService: ApiService,
-    private _announcer: LiveAnnouncer
-  ) {}
+  constructor(private apiService: ApiService) {}
 
-  // @ViewChild(MatSort) sort: MatSort;
- 
-
-  private readonly userData$: Observable<IUser[]> =
-    this.apiService.fetchUsersDetails();
+  private readonly userData$: Observable<IUser[]> = this.apiService.fetchUsersDetails();
 
   ngOnInit(): void {
-    
-    
-
+    this.userData$.subscribe((users: IUser[]) => {
+      this.users = users;
+    });
   }
- 
 }
