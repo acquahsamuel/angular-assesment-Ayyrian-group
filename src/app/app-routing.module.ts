@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SortingComponent } from './modules/sorting/sorting.component';
  
 const routes: Routes = [
+ 
   {
-    path: '',
-    loadChildren: () =>
-      import('./modules/sorting/sorting.module').then(
-        (m) => m.SortingModule),
+    path : "",
+    component : SortingComponent
   }
 ];
 
