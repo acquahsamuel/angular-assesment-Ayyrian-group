@@ -13,10 +13,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { InputTextModule } from 'primeng/inputtext';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
+import { ngPrimeModule } from 'src/app/ng-prime.module';
  
 @Component({
   selector: 'app-sorting',
-  imports: [TableModule, TagModule, IconFieldModule, InputTextModule, InputIconModule, MultiSelectModule, DropdownModule, HttpClientModule, CommonModule],
+  imports : [ ngPrimeModule],
+  // imports: [TableModule, TagModule, IconFieldModule, InputTextModule, InputIconModule, MultiSelectModule, DropdownModule, HttpClientModule, CommonModule],
   templateUrl: './sorting.component.html',
   styleUrls: ['./sorting.component.scss'],
   standalone: true,
