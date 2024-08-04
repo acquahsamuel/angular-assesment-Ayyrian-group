@@ -1,4 +1,4 @@
-# Project Assesment
+# Project Assesment (Project Preview)
 
 <img src="src/assets/images/project-screenshot.png">
 
