@@ -1,7 +1,21 @@
 # Project Assesment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+<img src="src/assets/images/project-screenshot.png">
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3
+
+ 1. Create a basic Angular application that includes:
+
+ • A sortable table displaying data from a public RESTful API (e.g., JSONPlaceholder).
+ • The table should be responsive and allow users to sort data by any column.
+ • Implement basic styling to ensure the table is visually appealing.
+ 2. Steps to Complete the Task:
+
+ • Set up a new Angular project.
+ • Create a component for the sortable table.
+ • Fetch data from the public API and display it in the table.
+ • Implement sorting functionality for the table columns.
+ • Ensure the table is responsive across different devices.
 
 
 
