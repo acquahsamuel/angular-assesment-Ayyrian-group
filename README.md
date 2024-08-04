@@ -1,4 +1,5 @@
 # Project Assesment (Project Preview)
+Developer : Samuel Acquah
 
 <img src="src/assets/images/project-screenshot.png">
 
