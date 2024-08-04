@@ -1,0 +1,152 @@
+.container {
+  width: 90%;
+  margin: 2em auto;
+  overflow-x: scroll;
+}
+
+.header{
+    padding: 2em 0;
+}
+
+.sm-devices {
+  display: none;
+  background-color: thistle;
+}
+
+#phone{
+    border: 1px solid rgb(218, 213, 213);
+    background-color: rgb(252, 250, 250);
+    border-radius: 8px;
+    padding: .1em 1em;
+}
+
+table {
+  border: 1px solid #f5f3f3;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #f1f1f1;
+  }
+}
+
+table th,
+table td {
+  padding: 0.3em;
+  border: 1px solid #dddcdc;
+}
+
+table th {
+  font-size: 1em;
+  font-weight: 500;
+  text-transform: titlecase;
+  background-color: rgb(213, 216, 213);
+  color: rgb(32, 31, 31);
+}
+
+@media screen and (max-width: 600px) {
+  .lg-devices {
+    display: none;
+    background-color: green;
+  }
+
+  .sm-devices {
+    display: block;
+    background-color: thistle;
+  }
+
+
+  table {
+    border: 0;
+    width: 90%;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+    
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+    
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+  
+}
+
+.loader {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #070000;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  transform: translate(50%, 50%);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  p {
+    color: tomato;
+  }
+}
+
+
